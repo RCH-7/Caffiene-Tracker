@@ -559,7 +559,11 @@ export default function Page() {
               value: bedtimeIndex,
               borderDash: [6, 6],
               borderWidth: 1,
-              label: { display: true, content: "Bedtime", position: "start" },
+              label: {
+                display: true,
+                content: "Bedtime",
+                position: "start" as const,
+              },
             },
           },
         },
@@ -569,14 +573,20 @@ export default function Page() {
         },
         focusZones: {
           zones: [
-            { startIndex: focusZones.top1.startIndex, endIndex: focusZones.top1.endIndex },
-            { startIndex: focusZones.top2.startIndex, endIndex: focusZones.top2.endIndex },
+            {
+              startIndex: focusZones.top1.startIndex,
+              endIndex: focusZones.top1.endIndex,
+            },
+            {
+              startIndex: focusZones.top2.startIndex,
+              endIndex: focusZones.top2.endIndex,
+            },
           ],
-          color: "rgba(52, 199, 89, 0.18)",
-          borderColor: "rgba(52, 199, 89, 0.55)",
+          color: "rgba(52, 199, 89, 0.12)",
+          borderColor: "rgba(52, 199, 89, 0.45)",
         },
       },
-    };
+    } as any;
   }, [bedtimeIndex, focusZones]);
 
   const below25Time = useMemo(() => {
